@@ -1,9 +1,10 @@
-import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, signal, computed, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { ScrollAnimationService } from '../../services/scroll-animation.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-education',
@@ -15,6 +16,10 @@ import { ScrollAnimationService } from '../../services/scroll-animation.service'
 export class EducationComponent implements AfterViewInit, OnDestroy {
   private elementRef = inject(ElementRef);
   private scrollAnimationService = inject(ScrollAnimationService);
+  private languageService = inject(LanguageService);
+  
+  // Получаем переводы из сервиса
+  protected readonly t = computed(() => this.languageService.getTranslations());
 
   protected readonly educationItems = signal([
     {
@@ -43,26 +48,6 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
     }
   ]);
 
-  protected readonly certifications = signal([
-    {
-      name: 'Microsoft Certified: Azure Developer Associate',
-      issuer: 'Microsoft',
-      date: '2024',
-      description: 'Сертификация по разработке облачных приложений на платформе Azure'
-    },
-    {
-      name: 'AWS Certified Developer',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      description: 'Сертификация по разработке приложений в облаке AWS'
-    },
-    {
-      name: 'Google Cloud Professional Developer',
-      issuer: 'Google Cloud',
-      date: '2023',
-      description: 'Сертификация по разработке приложений в Google Cloud Platform'
-    }
-  ]);
 
   ngAfterViewInit(): void {
     // Регистрируем education компонент как четвертый элемент (порядок 3) с анимацией flipInX

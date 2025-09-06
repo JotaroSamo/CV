@@ -1,9 +1,10 @@
-import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, signal, computed, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { ScrollAnimationService } from '../../services/scroll-animation.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-about',
@@ -15,17 +16,12 @@ import { ScrollAnimationService } from '../../services/scroll-animation.service'
 export class AboutComponent implements AfterViewInit, OnDestroy {
   private elementRef = inject(ElementRef);
   private scrollAnimationService = inject(ScrollAnimationService);
-  protected readonly aboutText = signal(`
-    Привет! Меня зовут Антон Самошук, и я .NET Developer с 2+ годами опыта в разработке современных веб-приложений и API. 
-    Моя страсть к программированию началась с изучения C#, и с тех пор я постоянно развиваюсь в области backend-разработки.
-    
-    Я специализируюсь на создании масштабируемых и производительных приложений, используя современные технологии 
-    такие как ASP.NET Core, Entity Framework, SQL Server и RabbitMQ. Мой опыт включает работу с микросервисной архитектурой, 
-    создание RESTful API, асинхронной обработки сообщений и интеграцию с различными базами данных.
-    
-    В свободное время я изучаю новые технологии .NET экосистемы, участвую в open-source проектах и создаю собственные проекты для 
-    портфолио. Я верю, что лучший способ обучения - это практика и постоянное совершенствование своих навыков.
-  `);
+  private languageService = inject(LanguageService);
+  
+  // Получаем переводы из сервиса
+  protected readonly t = computed(() => this.languageService.getTranslations());
+  
+  protected readonly aboutText = computed(() => this.t().about_text);
 
   protected readonly highlights = signal([
     {

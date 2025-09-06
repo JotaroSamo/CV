@@ -16,12 +16,12 @@
           <div class="info-grid">
             <div class="info-item">
               <mat-icon class="info-icon">cake</mat-icon>
-              <span class="info-text">{{ age() }} лет</span>
+              <span class="info-text">{{ age() }} {{ t().age }}</span>
             </div>
             
             <div class="info-item">
               <mat-icon class="info-icon">work</mat-icon>
-              <span class="info-text">{{ experience() }}+ лет опыта</span>
+              <span class="info-text">{{ experience() }}{{ t().experience_years }}</span>
             </div>
             
             <div class="info-item">
@@ -41,7 +41,7 @@
       <!-- Skills and Actions -->
       <div class="intro-actions">
         <div class="skills-section">
-          <h3 class="skills-title">Основные навыки</h3>
+          <h3 class="skills-title">{{ t().main_skills }}</h3>
           <div class="skills-container">
             @for (skill of skills(); track skill) {
               <mat-chip class="skill-chip">{{ skill }}</mat-chip>
@@ -52,7 +52,7 @@
         <div class="action-buttons">
           <button mat-raised-button color="primary" class="action-btn" (click)="downloadCV()">
             <mat-icon>download</mat-icon>
-            Скачать CV
+            {{ t().download_cv }}
           </button>
         </div>
         

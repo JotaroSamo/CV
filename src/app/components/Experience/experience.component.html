@@ -3,7 +3,7 @@
     <div class="experience-content">
       <!-- Заголовок секции -->
       <div class="section-header">
-        <h2 class="section-title">Опыт работы</h2>
+        <h2 class="section-title">{{ t().work_experience }}</h2>
         <mat-divider class="section-divider"></mat-divider>
       </div>
 
@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="achievements">
-                  <h5 class="achievements-title">Достижения и задачи:</h5>
+                  <h5 class="achievements-title">{{ t().achievements_tasks }}</h5>
                   <ul class="achievements-list">
                     @for (achievement of experience.achievements; track achievement) {
                       <li class="achievement-item">
@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="technologies">
-                  <h5 class="technologies-title">Технологии:</h5>
+                  <h5 class="technologies-title">{{ t().technologies }}</h5>
                   <div class="tech-tags">
                     @for (tech of experience.technologies; track tech) {
                       <span class="tech-tag">{{ tech }}</span>

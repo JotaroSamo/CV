@@ -21,9 +21,6 @@ html {
 }
 
 body {
-  // Enable dark color theme for CV website
-  color-scheme: dark;
-
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
@@ -34,6 +31,23 @@ body {
   // Reset the user agent margin and set Poppins as primary font
   margin: 0;
   font-family: 'Poppins', "Helvetica Neue", sans-serif;
+  
+  // Default to dark theme
+  color-scheme: dark;
+  
+  // Light theme styles
+  &.light-theme {
+    color-scheme: light;
+    background-color: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+  }
+  
+  // Dark theme styles
+  &.dark-theme {
+    color-scheme: dark;
+    background-color: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+  }
 }
 
 html, body { 

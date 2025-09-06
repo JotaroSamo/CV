@@ -1,9 +1,10 @@
-import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, signal, computed, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { ScrollAnimationService } from '../../services/scroll-animation.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-experience',
@@ -15,6 +16,10 @@ import { ScrollAnimationService } from '../../services/scroll-animation.service'
 export class ExperienceComponent implements AfterViewInit, OnDestroy {
   private elementRef = inject(ElementRef);
   private scrollAnimationService = inject(ScrollAnimationService);
+  private languageService = inject(LanguageService);
+  
+  // Получаем переводы из сервиса
+  protected readonly t = computed(() => this.languageService.getTranslations());
 
   protected readonly experiences = signal([
     {

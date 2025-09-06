@@ -1,10 +1,11 @@
-import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, signal, computed, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { ScrollAnimationService } from '../../services/scroll-animation.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-intro',
@@ -16,15 +17,20 @@ import { ScrollAnimationService } from '../../services/scroll-animation.service'
 export class IntroComponent implements AfterViewInit, OnDestroy {
   private elementRef = inject(ElementRef);
   private scrollAnimationService = inject(ScrollAnimationService);
-  protected readonly name = signal('Антон Самошук');
-  protected readonly position = signal('.NET Developer');
+  private languageService = inject(LanguageService);
+  
+  // Получаем переводы из сервиса
+  protected readonly t = computed(() => this.languageService.getTranslations());
+  
+  protected readonly name = computed(() => this.t().name);
+  protected readonly position = computed(() => this.t().position);
   protected readonly age = signal(23);
   protected readonly experience = signal(2);
-  protected readonly location = signal('Москва, Россия');
+  protected readonly location = computed(() => this.t().location);
   protected readonly email = signal('your.email@example.com');
-  protected readonly phone = signal('+375 (29) 558-06-31'); // Ваш номер телефона558-
-  protected readonly photoPath = signal('avatar.jpg'); // Путь к вашему фото
-  protected readonly cvPath = signal('assets/Resume RU.pdf'); // Путь к вашему CV файлу
+  protected readonly phone = computed(() => this.t().phone);
+  protected readonly photoPath = signal('avatar.jpg');
+  protected readonly cvPath = signal('assets/Resume RU.pdf');
   
   protected readonly skills = signal([
     'C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'RabbitMQ', 'Git'
