@@ -106,7 +106,7 @@ export class ScrollAnimationService {
     if (order === 0) {
       setTimeout(() => {
         this.animateElement(elementId);
-      }, 100);
+      }, 300); // Увеличиваем задержку для более плавного появления
     }
   }
 
@@ -159,8 +159,13 @@ export class ScrollAnimationService {
     if (this.canAnimateElement(elementId)) {
       element.hasAnimated = true;
       
-      // Применяем анимацию в зависимости от типа
-      this.applyAnimationStyles(element.element, element.animationType);
+      // Для элементов с одинаковым порядком добавляем небольшую задержку
+      const delay = this.getAnimationDelay(elementId);
+      
+      setTimeout(() => {
+        // Применяем анимацию в зависимости от типа
+        this.applyAnimationStyles(element.element, element.animationType);
+      }, delay);
       
       // Обновляем состояние
       this.elements.update(elements => {
@@ -187,6 +192,19 @@ export class ScrollAnimationService {
   }
 
   /**
+   * Получает задержку для анимации элемента
+   */
+  private getAnimationDelay(elementId: string): number {
+    // Для intro-right добавляем задержку 300ms
+    if (elementId === 'intro-right') {
+      return 300;
+    }
+    
+    // Для остальных элементов без задержки
+    return 0;
+  }
+
+  /**
    * Принудительно анимирует элемент (для отладки)
    */
   forceAnimateElement(elementId: string): void {
@@ -197,7 +215,7 @@ export class ScrollAnimationService {
    * Устанавливает начальные стили для анимации
    */
   private setInitialAnimationStyles(element: HTMLElement, animationType: AnimationType): void {
-    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    element.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
     
     switch (animationType) {
       case 'fadeInUp':

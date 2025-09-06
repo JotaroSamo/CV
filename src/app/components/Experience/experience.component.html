@@ -21,7 +21,17 @@
                   </div>
                 </div>
                 
-                <p class="experience-description">{{ experience.description }}</p>
+                <div class="achievements">
+                  <h5 class="achievements-title">Достижения и задачи:</h5>
+                  <ul class="achievements-list">
+                    @for (achievement of experience.achievements; track achievement) {
+                      <li class="achievement-item">
+                        <mat-icon class="achievement-icon">check_circle</mat-icon>
+                        <span class="achievement-text">{{ achievement }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
                 
                 <div class="technologies">
                   <h5 class="technologies-title">Технологии:</h5>

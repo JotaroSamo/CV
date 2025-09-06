@@ -6,7 +6,8 @@
 1. **Intro** - левая часть появляется слева, правая часть справа
 2. **About** - появляется с эффектом "из неоткуда" (zoomIn)
 3. **Experience** - появляется с поворотом (rotateIn)
-4. И так далее для будущих компонентов...
+4. **Education** - появляется с поворотом по оси X (flipInX)
+5. И так далее для будущих компонентов...
 
 ## Как это работает
 
@@ -79,8 +80,9 @@ ng generate component components/MyNewComponent
 - **0**: Intro (левая часть слева, правая часть справа)
 - **1**: About (zoomIn - "из неоткуда")
 - **2**: Experience (rotateIn - с поворотом)
+- **3**: Education (flipInX - поворот по оси X)
 
-Для добавления нового компонента используйте следующий порядок (3, 4, 5...).
+Для добавления нового компонента используйте следующий порядок (4, 5, 6...).
 
 ## Типы анимаций
 
@@ -127,21 +129,21 @@ this.scrollAnimationService.resetAnimations();
 ### Компонент "Навыки"
 ```typescript
 ngAfterViewInit(): void {
-  this.scrollAnimationService.registerElement('skills', this.elementRef.nativeElement, 3, 'bounceIn');
+  this.scrollAnimationService.registerElement('skills', this.elementRef.nativeElement, 4, 'bounceIn');
 }
 ```
 
 ### Компонент "Проекты"
 ```typescript
 ngAfterViewInit(): void {
-  this.scrollAnimationService.registerElement('projects', this.elementRef.nativeElement, 4, 'flipInX');
+  this.scrollAnimationService.registerElement('projects', this.elementRef.nativeElement, 5, 'slideInUp');
 }
 ```
 
 ### Компонент "Контакты"
 ```typescript
 ngAfterViewInit(): void {
-  this.scrollAnimationService.registerElement('contacts', this.elementRef.nativeElement, 5, 'slideInUp');
+  this.scrollAnimationService.registerElement('contacts', this.elementRef.nativeElement, 6, 'fadeInUp');
 }
 ```
 

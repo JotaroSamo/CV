@@ -1,0 +1,80 @@
+<section id="education" class="education-section">
+  <div class="container">
+    <div class="education-content">
+      <!-- Заголовок секции -->
+      <div class="section-header">
+        <h2 class="section-title">Образование</h2>
+        <mat-divider class="section-divider"></mat-divider>
+      </div>
+
+      <!-- Основное образование -->
+      <div class="education-timeline">
+        @for (education of educationItems(); track education.institution) {
+          <mat-card class="education-card">
+            <mat-card-content>
+              <div class="education-content">
+                <div class="education-header">
+                  <div class="institution-info">
+                    <h3 class="institution-name">{{ education.institution }}</h3>
+                    <h4 class="degree-title">{{ education.degree }}</h4>
+                    <div class="period-gpa">
+                      <span class="period">{{ education.period }}</span>
+                      <span class="gpa">GPA: {{ education.gpa }}</span>
+                    </div>
+                  </div>
+                  <div class="education-icon">
+                    <mat-icon>school</mat-icon>
+                  </div>
+                </div>
+                
+                <p class="education-description">{{ education.description }}</p>
+                
+                <div class="achievements">
+                  <h5 class="achievements-title">Достижения:</h5>
+                  <ul class="achievements-list">
+                    @for (achievement of education.achievements; track achievement) {
+                      <li class="achievement-item">
+                        <mat-icon class="achievement-icon">check_circle</mat-icon>
+                        <span class="achievement-text">{{ achievement }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+
+      <!-- Сертификации -->
+      <div class="certifications-section">
+        <h3 class="certifications-title">
+          <mat-icon class="title-icon">verified</mat-icon>
+          Сертификации
+        </h3>
+        
+        <div class="certifications-grid">
+          @for (cert of certifications(); track cert.name) {
+            <mat-card class="certification-card">
+              <mat-card-content>
+                <div class="certification-content">
+                  <div class="cert-header">
+                    <div class="cert-icon">
+                      <mat-icon>verified_user</mat-icon>
+                    </div>
+                    <div class="cert-info">
+                      <h4 class="cert-name">{{ cert.name }}</h4>
+                      <p class="cert-issuer">{{ cert.issuer }}</p>
+                      <span class="cert-date">{{ cert.date }}</span>
+                    </div>
+                  </div>
+                  <p class="cert-description">{{ cert.description }}</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -66,7 +66,6 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Отменяем регистрацию при уничтожении компонента
     this.scrollAnimationService.unregisterElement('intro-left');
     this.scrollAnimationService.unregisterElement('intro-right');
   }
