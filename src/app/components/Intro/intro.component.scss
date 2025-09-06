@@ -5,6 +5,7 @@
   padding: 10px 0; // Отступ для header
   position: relative;
   overflow: hidden;
+  z-index: 10;
   
   // Фоновый градиент
   &::before {
@@ -333,6 +334,11 @@
 
 // Адаптивность
 @media (max-width: 768px) {
+  .intro-section {
+    padding: 200px 0 40px;
+    margin-top: 20px;
+  }
+  
   .intro-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -362,19 +368,27 @@
 
 @media (max-width: 480px) {
   .intro-section {
-    padding: 100px 0 40px;
+    padding: 200px 0 40px;
+    margin-top: 30px;
   }
   
   .main-info .name-title {
     font-size: 2rem;
   }
   
-  .photo-container .photo-placeholder {
+  .photo-container .photo-wrapper {
     width: 150px;
     height: 150px;
     
     .photo-icon {
       font-size: 3rem;
     }
+  }
+}
+
+@media (max-width: 360px) {
+  .intro-section {
+    padding: 300px 0 40px;
+    margin-top: 40px;
   }
 }
