@@ -1,0 +1,60 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <!-- Заголовок секции -->
+      <div class="section-header">
+        <h2 class="section-title">Обо мне</h2>
+        <mat-divider class="section-divider"></mat-divider>
+      </div>
+
+      <!-- Основной контент -->
+      <div class="about-main">
+        <!-- Текст о себе -->
+        <mat-card class="about-card">
+          <mat-card-content>
+            <div class="about-text">
+              <p class="about-paragraph">{{ aboutText() }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Основные направления -->
+        <div class="highlights-grid">
+          @for (highlight of highlights(); track highlight.title) {
+            <mat-card class="highlight-card">
+              <mat-card-content>
+                <div class="highlight-content">
+                  <div class="highlight-icon">
+                    <mat-icon [attr.aria-label]="highlight.title">{{ highlight.icon }}</mat-icon>
+                  </div>
+                  <h3 class="highlight-title">{{ highlight.title }}</h3>
+                  <p class="highlight-description">{{ highlight.description }}</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          }
+        </div>
+
+        <!-- Ценности -->
+        <mat-card class="values-card">
+          <mat-card-header>
+            <mat-card-title class="values-title">
+              <mat-icon class="title-icon">favorite</mat-icon>
+              Мои ценности
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="values-list">
+              @for (value of values(); track value) {
+                <div class="value-item">
+                  <mat-icon class="value-icon">check_circle</mat-icon>
+                  <span class="value-text">{{ value }}</span>
+                </div>
+              }
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
