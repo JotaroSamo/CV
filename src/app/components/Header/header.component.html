@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo/Name Section -->
+      <div class="logo">
+        <h1 class="name">{{ name() }}</h1>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="navigation">
+        <!-- Glass Panel -->
+        <div #glassPanel class="glass-panel"></div>
+        
+        <ul class="nav-list">
+          @for (item of navigationItems(); track item.href) {
+            <li class="nav-item">
+              <a [href]="item.href" class="nav-link">
+                <span class="nav-text">{{ item.label }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

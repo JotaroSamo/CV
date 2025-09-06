@@ -1,0 +1,73 @@
+<section id="home" class="intro-section">
+  <div class="container">
+    <div class="intro-content">
+      <!-- Photo and Main Info -->
+      <div class="intro-main">
+        <div class="photo-container">
+          <div class="photo-wrapper">
+            <img [src]="photoPath()" [alt]="name()" class="photo" />
+            <div class="photo-overlay">
+              <mat-icon class="photo-icon">person</mat-icon>
+              <span class="photo-text">Ваше фото</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-info">
+          <h1 class="name-title">{{ name() }}</h1>
+          <h2 class="position-title">{{ position() }}</h2>
+          
+          <div class="info-grid">
+            <div class="info-item">
+              <mat-icon class="info-icon">cake</mat-icon>
+              <span class="info-text">{{ age() }} лет</span>
+            </div>
+            
+            <div class="info-item">
+              <mat-icon class="info-icon">work</mat-icon>
+              <span class="info-text">{{ experience() }}+ лет опыта</span>
+            </div>
+            
+            <div class="info-item">
+              <mat-icon class="info-icon">location_on</mat-icon>
+              <span class="info-text">{{ location() }}</span>
+            </div>
+            
+            <div class="info-item">
+              <mat-icon class="info-icon">phone</mat-icon>
+              <span class="info-text">{{ phone() }}</span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skills and Actions -->
+      <div class="intro-actions">
+        <div class="skills-section">
+          <h3 class="skills-title">Основные навыки</h3>
+          <div class="skills-container">
+            @for (skill of skills(); track skill) {
+              <mat-chip class="skill-chip">{{ skill }}</mat-chip>
+            }
+          </div>
+        </div>
+        
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" class="action-btn" (click)="downloadCV()">
+            <mat-icon>download</mat-icon>
+            Скачать CV
+          </button>
+        </div>
+        
+        <div class="social-links">
+          @for (link of socialLinks(); track link.icon) {
+            <a [href]="link.url" class="social-link" [title]="link.label">
+              <mat-icon>{{ link.icon }}</mat-icon>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+.main-content {
+  margin-top: 80px; // Отступ для фиксированного header
+  min-height: calc(100vh - 80px);
+}
+
+// Дополнительные стили для основного приложения
+app-root {
+  display: block;
+  min-height: 100vh;
+}

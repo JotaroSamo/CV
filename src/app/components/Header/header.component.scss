@@ -1,0 +1,180 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(var(--mat-sys-surface-rgb), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--mat-sys-outline-rgb), 0.1);
+  transition: all 0.3s ease;
+  
+  // Градиентная линия внизу
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--mat-sys-primary) 20%,
+      var(--mat-sys-tertiary) 50%,
+      var(--mat-sys-primary) 80%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    opacity: 0.8;
+    animation: gradientFlow 10s ease-in-out infinite;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  .name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(
+      90deg,
+      var(--mat-sys-primary) 0%,
+      var(--mat-sys-tertiary) 25%,
+      var(--mat-sys-primary) 50%,
+      var(--mat-sys-tertiary) 75%,
+      var(--mat-sys-primary) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 10s ease-in-out infinite;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.navigation {
+  position: relative;
+  
+  .glass-panel {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .nav-item {
+    position: relative;
+    
+    .nav-link {
+      position: relative;
+      display: block;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      color: var(--mat-sys-on-surface);
+      font-weight: 500;
+      border-radius: 25px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+      
+      .nav-text {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      &:hover {
+        color: var(--mat-sys-primary);
+        background: rgba(var(--mat-sys-primary-rgb), 0.1);
+        border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.3);
+        box-shadow: 
+          0 4px 20px rgba(var(--mat-sys-primary-rgb), 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        
+        .nav-text {
+          color: var(--mat-sys-primary);
+          text-shadow: 0 0 15px rgba(var(--mat-sys-primary-rgb), 0.6);
+        }
+      }
+      
+    }
+  }
+}
+
+
+// Адаптивность
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .logo .name {
+    font-size: 1.5rem;
+  }
+  
+  .navigation .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  
+  .navigation .nav-item .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .navigation .nav-item .nav-link {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// Анимация градиентной линии
+@keyframes gradientFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
