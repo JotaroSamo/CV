@@ -1,0 +1,183 @@
+.experience-section {
+  padding: 80px 0;
+  background: var(--mat-sys-surface);
+  position: relative;
+  z-index: 1;
+}
+
+.experience-content {
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background: linear-gradient(
+      90deg,
+      var(--mat-sys-primary) 0%,
+      var(--mat-sys-tertiary) 50%,
+      var(--mat-sys-primary) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 8s ease-in-out infinite;
+  }
+  
+  .section-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--mat-sys-primary), var(--mat-sys-tertiary));
+    border-radius: 2px;
+    margin: 0 auto;
+  }
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: var(--mat-sys-surface-container);
+  border: 1px solid var(--mat-sys-outline);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(var(--mat-sys-primary-rgb), 0.15);
+    border-color: rgba(var(--mat-sys-primary-rgb), 0.3);
+  }
+  
+  mat-card-content {
+    padding: 2rem;
+  }
+}
+
+.experience-content {
+  .experience-header {
+    margin-bottom: 1.5rem;
+    
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--mat-sys-primary);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .position-period {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      
+      .position-title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--mat-sys-on-surface);
+        margin: 0;
+      }
+      
+      .period {
+        font-size: 1rem;
+        color: var(--mat-sys-on-surface-variant);
+        background: rgba(var(--mat-sys-primary-rgb), 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.3);
+      }
+    }
+  }
+  
+  .experience-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--mat-sys-on-surface);
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .technologies {
+    .technologies-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--mat-sys-on-surface);
+      margin: 0 0 0.75rem 0;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      
+      .tech-tag {
+        background: rgba(var(--mat-sys-primary-rgb), 0.1);
+        color: var(--mat-sys-primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.3);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(var(--mat-sys-primary-rgb), 0.2);
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 60px 0;
+  }
+  
+  .section-header .section-title {
+    font-size: 2rem;
+  }
+  
+  .experience-timeline {
+    gap: 1.5rem;
+  }
+  
+  .experience-card mat-card-content {
+    padding: 1.5rem;
+  }
+  
+  .experience-content .experience-header .position-period {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-card mat-card-content {
+    padding: 1rem;
+  }
+  
+  .experience-content .experience-header .company-name {
+    font-size: 1.3rem;
+  }
+  
+  .experience-content .experience-header .position-period .position-title {
+    font-size: 1.1rem;
+  }
+}

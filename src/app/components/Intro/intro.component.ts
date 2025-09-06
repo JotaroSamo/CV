@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
+import { ScrollAnimationService } from '../../services/scroll-animation.service';
 
 @Component({
   selector: 'app-intro',
@@ -12,14 +13,16 @@ import { MatChipsModule } from '@angular/material/chips';
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss'
 })
-export class IntroComponent {
+export class IntroComponent implements AfterViewInit, OnDestroy {
+  private elementRef = inject(ElementRef);
+  private scrollAnimationService = inject(ScrollAnimationService);
   protected readonly name = signal('Антон Самошук');
   protected readonly position = signal('.NET Developer');
   protected readonly age = signal(23);
   protected readonly experience = signal(2);
   protected readonly location = signal('Москва, Россия');
   protected readonly email = signal('your.email@example.com');
-  protected readonly phone = signal('+7 (999) 123-45-67'); // Ваш номер телефона
+  protected readonly phone = signal('+375 (29) 558-06-31'); // Ваш номер телефона558-
   protected readonly photoPath = signal('avatar.jpg'); // Путь к вашему фото
   protected readonly cvPath = signal('assets/Resume RU.pdf'); // Путь к вашему CV файлу
   
@@ -46,5 +49,25 @@ export class IntroComponent {
   // Метод для связи по телефону
   protected callPhone(): void {
     window.open(`tel:${this.phone()}`, '_self');
+  }
+
+  ngAfterViewInit(): void {
+    // Регистрируем левую часть (фото и основная информация) - появляется слева
+    const leftPart = this.elementRef.nativeElement.querySelector('.intro-main');
+    if (leftPart) {
+      this.scrollAnimationService.registerElement('intro-left', leftPart as HTMLElement, 0, 'slideInLeft');
+    }
+
+    // Регистрируем правую часть (навыки и действия) - появляется справа
+    const rightPart = this.elementRef.nativeElement.querySelector('.intro-actions');
+    if (rightPart) {
+      this.scrollAnimationService.registerElement('intro-right', rightPart as HTMLElement, 0, 'slideInRight');
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Отменяем регистрацию при уничтожении компонента
+    this.scrollAnimationService.unregisterElement('intro-left');
+    this.scrollAnimationService.unregisterElement('intro-right');
   }
 }

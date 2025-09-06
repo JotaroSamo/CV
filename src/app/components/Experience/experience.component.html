@@ -1,0 +1,41 @@
+<section id="experience" class="experience-section">
+  <div class="container">
+    <div class="experience-content">
+      <!-- Заголовок секции -->
+      <div class="section-header">
+        <h2 class="section-title">Опыт работы</h2>
+        <mat-divider class="section-divider"></mat-divider>
+      </div>
+
+      <!-- Список опыта -->
+      <div class="experience-timeline">
+        @for (experience of experiences(); track experience.company) {
+          <mat-card class="experience-card">
+            <mat-card-content>
+              <div class="experience-content">
+                <div class="experience-header">
+                  <h3 class="company-name">{{ experience.company }}</h3>
+                  <div class="position-period">
+                    <h4 class="position-title">{{ experience.position }}</h4>
+                    <span class="period">{{ experience.period }}</span>
+                  </div>
+                </div>
+                
+                <p class="experience-description">{{ experience.description }}</p>
+                
+                <div class="technologies">
+                  <h5 class="technologies-title">Технологии:</h5>
+                  <div class="tech-tags">
+                    @for (tech of experience.technologies; track tech) {
+                      <span class="tech-tag">{{ tech }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { ScrollAnimationService } from '../../services/scroll-animation.service';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +12,9 @@ import { MatDividerModule } from '@angular/material/divider';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit, OnDestroy {
+  private elementRef = inject(ElementRef);
+  private scrollAnimationService = inject(ScrollAnimationService);
   protected readonly aboutText = signal(`
     Привет! Меня зовут Антон Самошук, и я .NET Developer с 2+ годами опыта в разработке современных веб-приложений и API. 
     Моя страсть к программированию началась с изучения C#, и с тех пор я постоянно развиваюсь в области backend-разработки.
@@ -54,4 +57,14 @@ export class AboutComponent {
     'Креативность',
     'Внимание к деталям'
   ]);
+
+  ngAfterViewInit(): void {
+    // Регистрируем about компонент как второй элемент (порядок 1) с анимацией "из неоткуда"
+    this.scrollAnimationService.registerElement('about', this.elementRef.nativeElement, 1, 'zoomIn');
+  }
+
+  ngOnDestroy(): void {
+    // Отменяем регистрацию при уничтожении компонента
+    this.scrollAnimationService.unregisterElement('about');
+  }
 }
