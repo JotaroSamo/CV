@@ -14,7 +14,7 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class IntroComponent {
   protected readonly name = signal('Антон Самошук');
-  protected readonly position = signal('Frontend Developer');
+  protected readonly position = signal('.NET Developer');
   protected readonly age = signal(23);
   protected readonly experience = signal(2);
   protected readonly location = signal('Москва, Россия');
@@ -24,7 +24,7 @@ export class IntroComponent {
   protected readonly cvPath = signal('assets/Resume RU.pdf'); // Путь к вашему CV файлу
   
   protected readonly skills = signal([
-    'Angular', 'TypeScript', 'JavaScript', 'HTML/CSS', 'SCSS', 'Git'
+    'C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'RabbitMQ', 'Git'
   ]);
   
   protected readonly socialLinks = signal([

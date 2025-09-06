@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 60px; // Отступ для header
+  padding: 10px 0; // Отступ для header
   position: relative;
   overflow: hidden;
   
@@ -256,13 +256,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: rgba(var(--mat-sys-surface-variant-rgb), 0.1);
     color: var(--mat-sys-on-surface);
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 1px solid rgba(var(--mat-sys-outline-rgb), 0.1);
     
     &:hover {
       transform: translateY(-2px) scale(1.1);
@@ -293,7 +294,10 @@
     }
     
     mat-icon {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      line-height: 1;
     }
   }
 }

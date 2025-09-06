@@ -1,281 +1,295 @@
 .about-section {
-  padding: 20px 0;
-  background: var(--mat-sys-surface);
-  position: relative;
-  z-index: 1;
-}
-
-.about-content {
-  position: relative;
-  z-index: 2;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  animation: fadeInUp 4s ease-out;
-  
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0 0 1rem 0;
-    line-height: 1.2;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    background: linear-gradient(
-      90deg,
-      var(--mat-sys-primary) 0%,
-      var(--mat-sys-tertiary) 50%,
-      var(--mat-sys-primary) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientFlow 8s ease-in-out infinite;
+    padding: 20px 0;
+    background: var(--mat-sys-surface);
+    position: relative;
+    z-index: 1;
   }
   
-  .section-divider {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--mat-sys-primary), var(--mat-sys-tertiary));
-    border-radius: 2px;
-    margin: 0 auto;
-  }
-}
-
-.about-main {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.about-card {
-  background: var(--mat-sys-surface-container);
-  border: 1px solid var(--mat-sys-outline);
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: slideInUp 1s ease-out 0.2s both;
-  
-  mat-card-content {
-    padding: 2rem;
+  .about-content {
+    position: relative;
+    z-index: 2;
   }
   
-  .about-text {
-    .about-paragraph {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--mat-sys-on-surface);
-      margin: 0;
-      text-align: justify;
-      white-space: pre-line;
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 4s ease-out;
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      line-height: 1.2;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      background: linear-gradient(
+        90deg,
+        var(--mat-sys-primary) 0%,
+        var(--mat-sys-tertiary) 50%,
+        var(--mat-sys-primary) 100%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientFlow 8s ease-in-out infinite;
+    }
+    
+    .section-divider {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mat-sys-primary), var(--mat-sys-tertiary));
+      border-radius: 2px;
+      margin: 0 auto;
     }
   }
-}
-
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.highlight-card {
-  background: var(--mat-sys-surface-container);
-  border: 1px solid var(--mat-sys-outline);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  overflow: hidden;
   
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(var(--mat-sys-primary-rgb), 0.15);
-    border-color: rgba(var(--mat-sys-primary-rgb), 0.3);
+  .about-main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
   
-  mat-card-content {
-    padding: 2rem;
-  }
-  
-  .highlight-content {
-    text-align: center;
+  .about-card {
+    background: var(--mat-sys-surface-container);
+    border: 1px solid var(--mat-sys-outline);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out 0.2s both;
     
-    .highlight-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--mat-sys-primary), var(--mat-sys-tertiary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      transition: all 0.3s ease;
+    mat-card-content {
+      padding: 2rem;
+    }
+    
+    .about-text {
+      .about-paragraph {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--mat-sys-on-surface);
+        margin: 0;
+        text-align: justify;
+        white-space: pre-line;
+      }
+    }
+  }
+  
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+  
+  .highlight-card {
+    background: var(--mat-sys-surface-container);
+    border: 1px solid var(--mat-sys-outline);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(var(--mat-sys-primary-rgb), 0.15);
+      border-color: rgba(var(--mat-sys-primary-rgb), 0.3);
+    }
+    
+    mat-card-content {
+      padding: 2rem;
+    }
+    
+    .highlight-content {
+      text-align: center;
       
-      mat-icon {
-        font-size: 2.5rem;
-        color: white;
+      .highlight-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--mat-sys-primary), var(--mat-sys-tertiary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 16px rgba(var(--mat-sys-primary-rgb), 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        
+        mat-icon {
+          font-size: 3rem;
+          color: white !important;
+          width: 3rem;
+          height: 3rem;
+          line-height: 1;
+          display: block;
+          text-align: center;
+        }
+      }
+      
+      &:hover .highlight-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+      
+      .highlight-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--mat-sys-on-surface);
+        margin: 0 0 1rem 0;
+      }
+      
+      .highlight-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--mat-sys-on-surface-variant);
+        margin: 0;
+      }
+    }
+  }
+  
+  .values-card {
+    background: var(--mat-sys-surface-container);
+    border: 1px solid var(--mat-sys-outline);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out 0.6s both;
+    
+    mat-card-header {
+      padding: 2rem 2rem 0;
+      
+      .values-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--mat-sys-on-surface);
+        
+        .title-icon {
+          color: var(--mat-sys-primary);
+          font-size: 2.5rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          line-height: 1;
+        }
       }
     }
     
-    &:hover .highlight-icon {
-      transform: scale(1.1) rotate(5deg);
+    mat-card-content {
+      padding: 1rem 2rem 2rem;
     }
     
-    .highlight-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--mat-sys-on-surface);
-      margin: 0 0 1rem 0;
-    }
-    
-    .highlight-description {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--mat-sys-on-surface-variant);
-      margin: 0;
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      
+      .value-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: rgba(var(--mat-sys-primary-rgb), 0.05);
+        border-radius: 12px;
+        border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(var(--mat-sys-primary-rgb), 0.1);
+          border-color: rgba(var(--mat-sys-primary-rgb), 0.3);
+          transform: translateX(8px);
+        }
+        
+        .value-icon {
+          color: var(--mat-sys-primary);
+          font-size: 1.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          line-height: 1;
+        }
+        
+        .value-text {
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--mat-sys-on-surface);
+        }
+      }
     }
   }
-}
-
-.values-card {
-  background: var(--mat-sys-surface-container);
-  border: 1px solid var(--mat-sys-outline);
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: slideInUp 1s ease-out 0.6s both;
   
-  mat-card-header {
-    padding: 2rem 2rem 0;
+  // Анимации
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(2deg);
+    }
+  }
+  
+  // Адаптивность
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 60px 0;
+    }
     
-    .values-title {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--mat-sys-on-surface);
+    .section-header .section-title {
+      font-size: 2.5rem;
+    }
+    
+    .highlights-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .values-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-card mat-card-content,
+    .highlight-card mat-card-content,
+    .values-card mat-card-content {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-header .section-title {
+      font-size: 2rem;
+    }
+    
+    .about-card mat-card-content,
+    .highlight-card mat-card-content,
+    .values-card mat-card-content {
+      padding: 1rem;
+    }
+    
+    .highlight-content .highlight-icon {
+      width: 60px;
+      height: 60px;
       
-      .title-icon {
-        color: var(--mat-sys-primary);
+      mat-icon {
         font-size: 2rem;
       }
     }
   }
   
-  mat-card-content {
-    padding: 1rem 2rem 2rem;
-  }
-  
-  .values-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    
-    .value-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: rgba(var(--mat-sys-primary-rgb), 0.05);
-      border-radius: 12px;
-      border: 1px solid rgba(var(--mat-sys-primary-rgb), 0.1);
-      transition: all 0.3s ease;
-      
-      &:hover {
-        background: rgba(var(--mat-sys-primary-rgb), 0.1);
-        border-color: rgba(var(--mat-sys-primary-rgb), 0.3);
-        transform: translateX(8px);
-      }
-      
-      .value-icon {
-        color: var(--mat-sys-primary);
-        font-size: 1.25rem;
-      }
-      
-      .value-text {
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--mat-sys-on-surface);
-      }
-    }
-  }
-}
-
-// Анимации
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(2deg);
-  }
-}
-
-// Адаптивность
-@media (max-width: 768px) {
-  .about-section {
-    padding: 60px 0;
-  }
-  
-  .section-header .section-title {
-    font-size: 2.5rem;
-  }
-  
-  .highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .values-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-card mat-card-content,
-  .highlight-card mat-card-content,
-  .values-card mat-card-content {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-header .section-title {
-    font-size: 2rem;
-  }
-  
-  .about-card mat-card-content,
-  .highlight-card mat-card-content,
-  .values-card mat-card-content {
-    padding: 1rem;
-  }
-  
-  .highlight-content .highlight-icon {
-    width: 60px;
-    height: 60px;
-    
-    mat-icon {
-      font-size: 2rem;
-    }
-  }
-}
