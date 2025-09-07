@@ -50,6 +50,15 @@ html, body {
   }
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth scroll by default as well */
+html {
+  scroll-behavior: smooth;
+}
+
 html, body { 
   height: 100%; 
 }

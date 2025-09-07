@@ -2,6 +2,7 @@ import { Component, signal, computed, ElementRef, ViewChild, AfterViewInit, Inje
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { LanguageService } from '../../services/language.service';
+import { SmoothScrollService } from '../../services/smooth-scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements AfterViewInit {
   
   private themeService = inject(ThemeService);
   private languageService = inject(LanguageService);
+  private smoothScroll = inject(SmoothScrollService);
   
   
   
@@ -74,6 +76,17 @@ export class HeaderComponent implements AfterViewInit {
         panel.style.transform = 'scale(0.8)';
       });
     });
+
+    // Навигация: плавная прокрутка
+    const links = document.querySelectorAll('.nav-item a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        if (!href) return;
+        e.preventDefault();
+        this.smoothScroll.scrollToSelector(href, 700, 8);
+      });
+    });
   }
 
   /**
@@ -88,5 +101,14 @@ export class HeaderComponent implements AfterViewInit {
    */
   protected toggleLanguage(): void {
     this.languageService.toggleLanguage();
+  }
+
+  /**
+   * Переход на главную и перезагрузка сайта
+   */
+  protected goHome(event: Event): void {
+    event.preventDefault();
+    // Плавная прокрутка к началу
+    this.smoothScroll.scrollToSelector('#home', 700, 8);
   }
 }
