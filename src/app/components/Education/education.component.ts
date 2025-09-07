@@ -21,32 +21,7 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
   // Получаем переводы из сервиса
   protected readonly t = computed(() => this.languageService.getTranslations());
 
-  protected readonly educationItems = signal([
-    {
-      institution: 'Московский государственный университет',
-      degree: 'Бакалавр информатики и вычислительной техники',
-      period: '2019 - 2023',
-      description: 'Изучение основ программирования, алгоритмов и структур данных, веб-разработки и баз данных.',
-      achievements: [
-        'Диплом с отличием',
-        'Участие в олимпиадах по программированию',
-        'Научная работа по машинному обучению'
-      ],
-      gpa: '4.8/5.0'
-    },
-    {
-      institution: 'Курсы повышения квалификации',
-      degree: 'Современные технологии .NET разработки',
-      period: '2023 - 2024',
-      description: 'Углубленное изучение ASP.NET Core, микросервисной архитектуры, Docker и Kubernetes.',
-      achievements: [
-        'Сертификат Microsoft',
-        'Проект на GitHub с 100+ звезд',
-        'Выступление на конференции разработчиков'
-      ],
-      gpa: '5.0/5.0'
-    }
-  ]);
+  protected readonly educationItems = computed(() => this.t().education_items);
 
 
   ngAfterViewInit(): void {

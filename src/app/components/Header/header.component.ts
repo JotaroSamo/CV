@@ -16,10 +16,12 @@ export class HeaderComponent implements AfterViewInit {
   private themeService = inject(ThemeService);
   private languageService = inject(LanguageService);
   
-  protected readonly name = signal('Ваше Имя'); // Замените на ваше имя
+  
   
   // Получаем переводы из сервиса
   protected readonly t = computed(() => this.languageService.getTranslations());
+
+  protected readonly name = computed(() => this.t().name);
   
   protected readonly navigationItems = computed(() => [
     { label: this.t().home, href: '#home' },

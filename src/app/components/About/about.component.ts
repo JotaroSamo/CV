@@ -23,36 +23,9 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   
   protected readonly aboutText = computed(() => this.t().about_text);
 
-  protected readonly highlights = signal([
-    {
-      icon: 'code',
-      title: 'Backend Разработка',
-      description: 'Создание масштабируемых API и веб-приложений с использованием ASP.NET Core'
-    },
-    {
-      icon: 'storage',
-      title: 'Базы данных',
-      description: 'Работа с SQL Server, Entity Framework и проектирование схем данных'
-    },
-    {
-      icon: 'message',
-      title: 'Message Broker',
-      description: 'Работа с RabbitMQ для асинхронной обработки сообщений и микросервисов'
-    },
-    {
-      icon: 'api',
-      title: 'API Integration',
-      description: 'Создание RESTful API и интеграция с внешними сервисами'
-    }
-  ]);
+  protected readonly highlights = computed(() => this.t().about_highlights);
 
-  protected readonly values = signal([
-    'Качество кода',
-    'Постоянное обучение',
-    'Командная работа',
-    'Креативность',
-    'Внимание к деталям'
-  ]);
+  protected readonly values = computed(() => this.t().values_list);
 
   ngAfterViewInit(): void {
     // Регистрируем about компонент как второй элемент (порядок 1) с анимацией "из неоткуда"
