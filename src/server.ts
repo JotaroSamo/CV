@@ -6,23 +6,51 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+// Node 18+ has global fetch; for older versions you can install node-fetch
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+// Body parser for JSON
+app.use(express.json({ limit: '100kb' }));
+
+// Contact endpoint → forwards to Telegram Bot
+app.post('/api/contact', async (req, res): Promise<void> => {
+  try {
+    const { contact, message } = req.body || {};
+    if (!contact || !message || String(message).trim().length < 5) {
+      res.status(400).send('Invalid data');
+      return;
+    }
+
+    const token = process.env['8449849509:AAFh0dRepmCe59EzRvowPmwhR_AGzrFJtZE'];
+    const chatId = process.env['5808559919'];
+    if (!token || !chatId) {
+      res.status(500).send('Telegram not configured');
+      return;
+    }
+
+    const text = `🆕 Новое сообщение с сайта\nКонтакт: ${contact}\nСообщение: ${message}`;
+    const tgUrl = `https://api.telegram.org/bot${token}/sendMessage`;
+    const tgResp = await fetch(tgUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text })
+    });
+    if (!tgResp.ok) {
+      const t = await tgResp.text();
+      res.status(502).send('Telegram error: ' + t);
+      return;
+    }
+    res.status(200).json({ ok: true });
+    return;
+  } catch (e) {
+    res.status(500).send('Server error');
+    return;
+  }
+});
 
 /**
  * Serve static files from /browser

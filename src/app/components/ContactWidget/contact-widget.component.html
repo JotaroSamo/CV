@@ -1,0 +1,18 @@
+<div class="contact-widget" [class.open]="isOpen()">
+  <button class="fab" (click)="toggle()" [attr.aria-expanded]="isOpen()">
+    @if (isOpen()) { ✖ } @else { 💬 }
+  </button>
+
+  <div class="panel">
+    <div class="panel-header">Связаться со мной</div>
+    <div class="panel-body">
+      <input class="input" [value]="contact()" (input)="contact.set($any($event.target).value)" placeholder="Телефон или @telegram" />
+      <textarea class="textarea" [value]="message()" (input)="message.set($any($event.target).value)" placeholder="Ваше сообщение"></textarea>
+      <button class="send" (click)="send()" [disabled]="isSending()">{{ isSending() ? 'Отправка...' : 'Отправить' }}</button>
+      @if (success()) { <div class="success">{{ success() }}</div> }
+      @if (error()) { <div class="error">{{ error() }}</div> }
+    </div>
+  </div>
+</div>
+
+
