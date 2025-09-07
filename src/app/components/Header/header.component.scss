@@ -59,10 +59,21 @@
     animation: gradientFlow 30s ease-in-out infinite;
     transition: all 0.3s ease;
     
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+
     &:hover {
       transform: scale(1.05);
     }
   }
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
 }
 
 .navigation {
