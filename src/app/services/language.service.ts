@@ -7,10 +7,8 @@ export interface Translations {
   // Header
   home: string;
   about: string;
-  skills: string;
   experience: string;
   education: string;
-  contacts: string;
   
   // Intro
   name: string;
@@ -67,10 +65,8 @@ export class LanguageService {
       // Header
       home: 'Главная',
       about: 'Обо мне',
-      skills: 'Навыки',
       experience: 'Опыт',
       education: 'Образование',
-      contacts: 'Контакты',
       
       // Intro
       name: 'Антон Самошук',
@@ -114,10 +110,8 @@ export class LanguageService {
       // Header
       home: 'Home',
       about: 'About',
-      skills: 'Skills',
       experience: 'Experience',
       education: 'Education',
-      contacts: 'Contacts',
       
       // Intro
       name: 'Anton Samoshuk',

@@ -24,10 +24,8 @@ export class HeaderComponent implements AfterViewInit {
   protected readonly navigationItems = computed(() => [
     { label: this.t().home, href: '#home' },
     { label: this.t().about, href: '#about' },
-    { label: this.t().skills, href: '#skills' },
     { label: this.t().experience, href: '#experience' },
-    { label: this.t().education, href: '#education' },
-    { label: this.t().contacts, href: '#contact' }
+    { label: this.t().education, href: '#education' }
   ]);
 
   // Получаем состояние темы из сервиса

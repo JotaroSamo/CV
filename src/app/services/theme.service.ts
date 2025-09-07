@@ -82,15 +82,24 @@ export class ThemeService {
     }
 
     const body = document.body;
+    const docEl = document.documentElement;
     
     if (theme === 'dark') {
       body.classList.remove('light-theme');
       body.classList.add('dark-theme');
       body.style.colorScheme = 'dark';
+      docEl.classList.remove('light-theme');
+      docEl.classList.add('dark-theme');
+      docEl.style.colorScheme = 'dark';
+      docEl.setAttribute('data-theme', 'dark');
     } else {
       body.classList.remove('dark-theme');
       body.classList.add('light-theme');
       body.style.colorScheme = 'light';
+      docEl.classList.remove('dark-theme');
+      docEl.classList.add('light-theme');
+      docEl.style.colorScheme = 'light';
+      docEl.setAttribute('data-theme', 'light');
     }
   }
 
