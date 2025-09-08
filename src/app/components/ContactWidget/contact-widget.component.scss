@@ -9,7 +9,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid rgba(var(--mat-sys-outline-rgb), 0.2);
+  border: 1px solid rgba(var(--mat-sys-outline-rgb), 0.5);
   background: var(--mat-sys-surface-variant);
   color: var(--mat-sys-on-surface-variant);
   cursor: pointer;
@@ -26,7 +26,7 @@
   position: absolute;
   right: 0;
   bottom: 72px;
-  background: var(--mat-sys-surface);
+  background: #1d1d1d;
   color: var(--mat-sys-on-surface);
   border: 1px solid rgba(var(--mat-sys-outline-rgb), 0.2);
   border-radius: 12px;

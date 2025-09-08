@@ -29,7 +29,7 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
   protected readonly location = computed(() => this.t().location);
   protected readonly email = signal('your.email@example.com');
   protected readonly phone = computed(() => this.t().phone);
-  protected readonly photoPath = signal('avatar.jpg');
+  protected readonly photoPath = signal('avatar.png');
   protected readonly cvPath = signal('assets/Resume RU.pdf');
   
   protected readonly skills = signal([

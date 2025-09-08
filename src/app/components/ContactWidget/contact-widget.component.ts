@@ -27,8 +27,8 @@ export class ContactWidgetComponent {
   private validate(): string | null {
     const contact = this.contact().trim();
     const message = this.message().trim();
-    if (!contact) return 'Введите телефон или Telegram (@username)';
-    if (message.length < 5) return 'Сообщение слишком короткое';
+    if (!contact) return this.t().validation_contact_required;
+    if (message.length < 5) return this.t().validation_message_short;
     return null;
   }
 
@@ -48,12 +48,12 @@ export class ContactWidgetComponent {
         body: JSON.stringify({ contact: this.contact(), message: this.message() })
       });
       if (!res.ok) throw new Error(await res.text());
-      this.success.set('Сообщение отправлено! Я свяжусь с вами.');
+      this.success.set(this.t().sent_success);
       this.contact.set('');
       this.message.set('');
     } catch (e: any) {
       console.error(e);
-      this.error.set('Не удалось отправить. Попробуйте позже.');
+      this.error.set(this.t().send_error);
     } finally {
       this.isSending.set(false);
     }

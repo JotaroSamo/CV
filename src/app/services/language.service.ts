@@ -62,6 +62,17 @@ export interface Translations {
     achievements: string[];
     technologies: string[];
   }>;
+
+  // Contact widget
+  contact_widget_title: string;
+  contact_placeholder: string;
+  message_placeholder: string;
+  send: string;
+  sending: string;
+  sent_success: string;
+  send_error: string;
+  validation_contact_required: string;
+  validation_message_short: string;
 }
 
 @Injectable({
@@ -203,6 +214,17 @@ export class LanguageService {
           technologies: ['C#', 'ASP.NET Core', 'Docker', 'PostgreSQL', 'Git', 'Azure DevOps']
         }
       ]
+      ,
+      // Contact widget
+      contact_widget_title: 'Связаться со мной',
+      contact_placeholder: 'Телефон или @telegram',
+      message_placeholder: 'Ваше сообщение',
+      send: 'Отправить',
+      sending: 'Отправка...',
+      sent_success: 'Сообщение отправлено! Я свяжусь с вами.',
+      send_error: 'Не удалось отправить. Попробуйте позже.',
+      validation_contact_required: 'Введите телефон или Telegram (@username)',
+      validation_message_short: 'Сообщение слишком короткое'
     },
     en: {
       // Header
@@ -323,6 +345,17 @@ export class LanguageService {
           technologies: ['C#', 'ASP.NET Core', 'Docker', 'PostgreSQL', 'Git', 'Azure DevOps']
         }
       ]
+      ,
+      // Contact widget
+      contact_widget_title: 'Contact me',
+      contact_placeholder: 'Phone or @telegram',
+      message_placeholder: 'Your message',
+      send: 'Send',
+      sending: 'Sending...',
+      sent_success: 'Message sent! I will contact you.',
+      send_error: 'Failed to send. Please try later.',
+      validation_contact_required: 'Enter phone or Telegram (@username)',
+      validation_message_short: 'Message is too short'
     }
   };
 
