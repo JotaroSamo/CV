@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     const allowedOrigins = [
       'http://localhost:4200',
       'http://localhost:3000',
-      'https://', // keep placeholder, match below
+      'https://visite-card.vercel.app', // keep placeholder, match below
     ];
     const origin = (req.headers.origin || '').toString();
     const referer = (req.headers.referer || '').toString();
