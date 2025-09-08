@@ -1,8 +1,13 @@
 export default async function handler(req, res) {
-  // Simple in-memory rate limiting by IP (resets on cold start)
+  // In-memory protections (reset on cold start)
   globalThis.__contactRateMap = globalThis.__contactRateMap || new Map();
-  const RATE_LIMIT_MAX = 3; // max requests
-  const RATE_LIMIT_WINDOW_MS = 60 * 1000; // per 60s
+  globalThis.__contactBanMap = globalThis.__contactBanMap || new Map();
+  globalThis.__contactByKeyMap = globalThis.__contactByKeyMap || new Map();
+  const RATE_LIMIT_MAX = 2; // max requests per 30s
+  const RATE_LIMIT_WINDOW_MS = 30 * 1000; // 30s window
+  const RATE_LIMIT_HOURLY_MAX = 20; // per hour
+  const RATE_LIMIT_HOURLY_MS = 60 * 60 * 1000;
+  const BAN_MINUTES = 15;
 
   const ip =
     (req.headers['x-forwarded-for'] || '')
@@ -10,14 +15,21 @@ export default async function handler(req, res) {
       .split(',')[0]
       .trim() || req.socket?.remoteAddress || 'unknown';
   const now = Date.now();
+  const bannedUntil = globalThis.__contactBanMap.get(ip) || 0;
+  if (now < bannedUntil) {
+    res.status(429).json({ ok: false, error: 'Temporarily blocked. Try later.' });
+    return;
+  }
   const bucket = globalThis.__contactRateMap.get(ip) || [];
-  const recent = bucket.filter(ts => now - ts < RATE_LIMIT_WINDOW_MS);
-  if (recent.length >= RATE_LIMIT_MAX) {
+  const shortRecent = bucket.filter(ts => now - ts < RATE_LIMIT_WINDOW_MS);
+  const hourRecent = bucket.filter(ts => now - ts < RATE_LIMIT_HOURLY_MS);
+  if (shortRecent.length >= RATE_LIMIT_MAX || hourRecent.length >= RATE_LIMIT_HOURLY_MAX) {
+    globalThis.__contactBanMap.set(ip, now + BAN_MINUTES * 60 * 1000);
     res.status(429).json({ ok: false, error: 'Too many requests. Please try later.' });
     return;
   }
-  recent.push(now);
-  globalThis.__contactRateMap.set(ip, recent);
+  shortRecent.push(now);
+  globalThis.__contactRateMap.set(ip, shortRecent);
 
   // Sanitize env vars to avoid stray quotes/semicolons from .env
   const rawToken = process.env.TELEGRAM_BOT_TOKEN || '';
@@ -35,6 +47,16 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Random small delay: slows down scripted spam
+    const delay = 400 + Math.floor(Math.random() * 500);
+    await new Promise(r => setTimeout(r, delay));
+
+    // Basic User-Agent filter
+    const ua = (req.headers['user-agent'] || '').toString().toLowerCase();
+    if (!ua || ua.includes('bot') || ua.includes('crawler') || ua.includes('spider')) {
+      res.status(403).send('Forbidden');
+      return;
+    }
     // Basic origin check (optional: adjust allowedOrigins to your domain)
     const allowedOrigins = [
       'http://localhost:4200',
@@ -52,7 +74,12 @@ export default async function handler(req, res) {
       return;
     }
 
-    const { contact, message } = req.body || {};
+    const { contact, message, hp } = req.body || {};
+    // Honeypot field: if present, silently accept
+    if (hp && String(hp).trim() !== '') {
+      res.status(204).end();
+      return;
+    }
     if (!contact || !message || String(message).trim().length < 5) {
       res.status(400).send('Invalid data');
       return;
@@ -66,13 +93,22 @@ export default async function handler(req, res) {
       return;
     }
 
-   
+    // Per-contact throttling (avoid repeated spam to same contact key)
+    const contactKey = String(contact).trim().toLowerCase().slice(0, 128);
+    const keyHist = globalThis.__contactByKeyMap.get(contactKey) || [];
+    const keyRecent = keyHist.filter(ts => now - ts < RATE_LIMIT_WINDOW_MS);
+    if (keyRecent.length >= 1) {
+      res.status(429).send('Too many requests (contact). Try later.');
+      return;
+    }
+    globalThis.__contactByKeyMap.set(contactKey, [...keyRecent, now]);
+
     if (!token || !chatId) {
       res.status(500).send('Telegram not configured');
       return;
     }
 
-    const text = `🆕 Новое сообщение с сайта\nКонтакт: ${contact}\nСообщение: ${message}`;
+    const text = `🆕 Новое сообщение с сайта\nIP: ${ip}\nКонтакт: ${contact}\nСообщение: ${message}`;
     const tgUrl = `https://api.telegram.org/bot${token}/sendMessage`;
 
 
