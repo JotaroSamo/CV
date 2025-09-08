@@ -30,26 +30,37 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
   protected readonly email = signal('your.email@example.com');
   protected readonly phone = computed(() => this.t().phone);
   protected readonly photoPath = signal('avatar.png');
-  protected readonly cvPath = signal('assets/Resume RU.pdf');
+  protected readonly cvPath = computed(() => this.t().file_cv);
   
   protected readonly skills = signal([
-    'C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'RabbitMQ', 'Git'
+    'C#', 'ASP.NET Core', 'EF Core', 'Dapper', 'PostgeSQL', 'MS SQL', 'Docker', 'Git', 'RabbitMQ', 'Redis', 'Grafana', 'Async Programming', 'MinIO'
   ]);
   
   protected readonly socialLinks = signal([
-    { icon: 'linkedin', url: 'https://linkedin.com/in/your-profile', label: 'LinkedIn' },
-    { icon: 'telegram', url: 'https://t.me/your_username', label: 'Telegram' },
-    { icon: 'email', url: 'mailto:your.email@example.com', label: 'Email' }
+    { icon: 'linkedin', url: 'https://www.linkedin.com/in/anton-samoshuk-21b109241', label: 'LinkedIn' },
+    { icon: 'telegram', url: 'https://t.me/dk_tengen', label: 'Telegram' },
+    { icon: 'email', url: 'mailto:toni.samoshuk@gmail.com', label: 'Email' }
   ]);
 
   // Метод для скачивания CV
-  protected downloadCV(): void {
-    const link = document.createElement('a');
-    link.href = this.cvPath();
-    link.download = 'Resume RU.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  protected async downloadCV(): Promise<void> {
+    try {
+      const urlPath = this.cvPath();
+      const response = await fetch(urlPath);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = this.t().file_cv;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error('Download failed, opening directly as fallback', e);
+      window.open(encodeURI(this.cvPath()), '_blank');
+    }
   }
 
   // Метод для связи по телефону

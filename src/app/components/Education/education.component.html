@@ -28,18 +28,7 @@
                 </div>
                 
                 <p class="education-description">{{ education.description }}</p>
-                
-                <div class="achievements">
-                  <h5 class="achievements-title">{{ t().achievements }}</h5>
-                  <ul class="achievements-list">
-                    @for (achievement of education.achievements; track achievement) {
-                      <li class="achievement-item">
-                        <mat-icon class="achievement-icon">check_circle</mat-icon>
-                        <span class="achievement-text">{{ achievement }}</span>
-                      </li>
-                    }
-                  </ul>
-                </div>
+              
               </div>
             </mat-card-content>
           </mat-card>
