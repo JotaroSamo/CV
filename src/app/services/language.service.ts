@@ -114,7 +114,7 @@ export class LanguageService {
       
       // About
       about_me: 'Обо мне',
-      about_text: `.NET Software Developer с 2-летним опытом разработки API, а также интеграции фронтенда и бэкенда. Создаю решения, которые оптимизируют процессы, повышают стабильность систем и улучшают пользовательский опыт.
+      about_text: `<strong>.NET Software Developer</strong> с <strong>2-летним</strong> опытом разработки API, а также интеграции фронтенда и бэкенда. Создаю решения, которые оптимизируют процессы, повышают стабильность систем и улучшают пользовательский опыт.
 
 Уверенно работаю с современными технологиями API разработки, а также инструментами мониторинга, OpenTelemetry и Grafana. Стремлюсь создавать масштабируемые и надежные решения для бизнеса`,
       my_values: 'Мои ценности',
@@ -216,7 +216,7 @@ export class LanguageService {
       
       // About
       about_me: 'About Me',
-      about_text: `.NET Software Developer with 2 years of experience in API development, as well as frontend and backend support. I create solutions that optimize processes, increase system stability and improve user experience.
+      about_text: `<strong>.NET Software Developer</strong> with <strong>2 years</strong> of experience in API development, as well as frontend and backend support. I create solutions that optimize processes, increase system stability and improve user experience.
 
 I confidently work with modern API development technologies, as well as monitoring tools, OpenTelemetry and Grafana. I strive to create scalable and reliable solutions for business.`,
       my_values: 'My Values',

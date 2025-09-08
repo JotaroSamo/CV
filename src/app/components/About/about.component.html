@@ -13,7 +13,7 @@
         <mat-card class="about-card">
           <mat-card-content>
             <div class="about-text">
-              <p class="about-paragraph">{{ aboutText() }}</p>
+              <p class="about-paragraph" [innerHTML]="aboutText()"></p>
             </div>
           </mat-card-content>
         </mat-card>
