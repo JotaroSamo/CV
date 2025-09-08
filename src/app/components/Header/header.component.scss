@@ -35,15 +35,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   gap: 2rem;
 }
 
 .logo {
   .name {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin: 0;
+    line-height: 1.2;
     background: linear-gradient(
       90deg,
       var(--mat-sys-primary) 0%,
