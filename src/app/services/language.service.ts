@@ -114,11 +114,9 @@ export class LanguageService {
       
       // About
       about_me: 'Обо мне',
-      about_text: `.NET Software Developer с 2-летним опытом разработки API, а также интеграции фронтенда и бэкенда. Создаю
-решения, которые оптимизируют процессы, повышают стабильность систем и улучшают пользовательский опыт.
+      about_text: `.NET Software Developer с 2-летним опытом разработки API, а также интеграции фронтенда и бэкенда. Создаю решения, которые оптимизируют процессы, повышают стабильность систем и улучшают пользовательский опыт.
 
-Уверенно работаю с современными технологиями API разработки, а также инструментами мониторинга,
-OpenTelemetry и Grafana. Стремлюсь создавать масштабируемые и надежные решения для бизнеса`,
+Уверенно работаю с современными технологиями API разработки, а также инструментами мониторинга, OpenTelemetry и Grafana. Стремлюсь создавать масштабируемые и надежные решения для бизнеса`,
       my_values: 'Мои ценности',
       
       // Experience
@@ -138,9 +136,8 @@ OpenTelemetry и Grafana. Стремлюсь создавать масштаби
       // About - highlights and values
       about_highlights: [
         { icon: 'code', title: 'Backend Разработка', description: 'Создание масштабируемых API и веб-приложений с использованием ASP.NET Core' },
-        { icon: 'storage', title: 'Базы данных', description: 'Работа с SQL Server, Entity Framework и проектирование схем данных' },
-        { icon: 'message', title: 'Message Broker', description: 'Работа с RabbitMQ для асинхронной обработки сообщений и микросервисов' },
-        { icon: 'api', title: 'API Интеграции', description: 'Создание RESTful, GraphQl API и интеграция с внешними сервисами' }
+        { icon: 'storage', title: 'Базы данных', description: 'Работа с PostgreSQL, Entity Framework, Dapper и проектирование схем данных' },
+        { icon: 'message', title: 'Message Broker', description: 'Работа с RabbitMQ для асинхронной обработки сообщений и микросервисов' }
       ],
       values_list: [
         'Качество кода',
@@ -219,11 +216,9 @@ OpenTelemetry и Grafana. Стремлюсь создавать масштаби
       
       // About
       about_me: 'About Me',
-      about_text: `.NET Software Developer with 2 years of experience in API development, as well as frontend and backend support. I create
-solutions that optimize processes, increase system stability and improve user experience.
+      about_text: `.NET Software Developer with 2 years of experience in API development, as well as frontend and backend support. I create solutions that optimize processes, increase system stability and improve user experience.
 
-I confidently work with modern API development technologies, as well as monitoring tools, OpenTelemetry and Grafana. I
-strive to create scalable and reliable solutions for business.`,
+I confidently work with modern API development technologies, as well as monitoring tools, OpenTelemetry and Grafana. I strive to create scalable and reliable solutions for business.`,
       my_values: 'My Values',
       
       // Experience
@@ -243,9 +238,8 @@ strive to create scalable and reliable solutions for business.`,
       // About - highlights and values
       about_highlights: [
         { icon: 'code', title: 'Backend Development', description: 'Building scalable APIs and web apps with ASP.NET Core' },
-        { icon: 'storage', title: 'Databases', description: 'Working with SQL Server, Entity Framework and data modeling' },
-        { icon: 'message', title: 'Message Broker', description: 'Using RabbitMQ for asynchronous processing and microservices' },
-        { icon: 'api', title: 'API Integration', description: 'Creating RESTful, GraphQl APIs and integrating with external services' }
+        { icon: 'storage', title: 'Databases', description: 'Working with PostgreSQL, Entity Framework, Dapper and data modeling' },
+        { icon: 'message', title: 'Message Broker', description: 'Using RabbitMQ for asynchronous processing and microservices' }
       ],
       values_list: [
         'Code quality',
