@@ -103,7 +103,7 @@ export class LanguageService {
       
       // Intro
       name: 'Антон Самошук',
-      position: '.NET Software Developer',
+      position: 'Middle .NET Software Developer',
       age: 'лет',
       experience_years: '+ лет опыта',
       location: 'Брест, Беларусь',
@@ -114,9 +114,13 @@ export class LanguageService {
       
       // About
       about_me: 'Обо мне',
-      about_text: `<strong>.NET Software Developer</strong> с <strong>2-летним</strong> опытом разработки API, а также интеграции фронтенда и бэкенда. Создаю решения, которые оптимизируют процессы, повышают стабильность систем и улучшают пользовательский опыт.
+      about_text: `<strong>Middle .NET Software Developer</strong> с <strong>2-летним</strong> опытом полного цикла разработки, сфокусированный решении любых бизнес задач.
 
-Уверенно работаю с современными технологиями API разработки, а также инструментами мониторинга, OpenTelemetry и Grafana. Стремлюсь создавать масштабируемые и надежные решения для бизнеса`,
+Моя ключевая задача — создание не просто работающих, а эффективных и надежных решений, которые напрямую влияют на бизнес-показатели: оптимизируют внутренние процессы, повышают стабильность систем и в конечном итоге улучшают пользовательский опыт.
+
+Глубоко заинтересован в современных практиках API-разработки. Активно применяю инструменты мониторинга и (OpenTelemetry, Grafana) для сбора метрик, анализа производительности и проактивного выявления проблем, что позволяет строить предсказуемые и отказоустойчивые системы.
+
+Ценю командную работу и открытую коммуникацию. Стремлюсь к проектам, где могу принести максимальную пользу, решая сложные задачи и участвуя в создании масштабируемых и технологически совершенных продуктов. Постоянно учусь и с интересом принимаю новые вызовы.`,
       my_values: 'Мои ценности',
       
       // Experience
@@ -162,20 +166,35 @@ export class LanguageService {
       experience_items: [
         {
           company: 'NDA',
-          position: '.NET Software Developer',
+          position: 'Middle .NET Software Developer',
           period: '2024 - Настоящее время',
           achievements: [
-            'Спроектировал и реализовал с нуля комплексную систему управления для критически важных об ъектов, обеспечившую полный жизненный цикл данных. Разработал более 25 API-эндпоинтов, поддерживающих сложную бизнес логику, интеграцию со сторонними сервисами и экспорт данных',
-            'Разработал фоновый сервис с пакетной обработкой файлов, реализовал транзакционную обработку с откатом при ошибках, создал таблицу для outbox для отслеживания состояния миграции каждого файла и механизм повторных попыток',
-            'Внедрил современные архитектурные паттерны (CQRS) и комплексную систему валидации, что повысило надежность и отказоустойчивость системы',
-            'Оптимизировал работу с базами данных и внедрил кэширование, что позволило системе стабильно работать с большими объемами данных при высокой нагрузке',
+            'Спроектировал и реализовал с нуля комплексную систему управления для критически важных объектов, обеспечившую полный жизненный цикл данных',
+            'Разработал фоновый сервис с пакетной обработкой файлов, реализовал транзакционную обработку с откатом при ошибках',
+            'Оптимизировал большие запросы в базу данных, что улучшило время запроса',
+            'Интегрировали стратегии кэширования с Redis для ускорения времени отклика и снижения нагрузки на базу данных',
             'Создал централизованную систему мониторинга здоровья всех ключевых компонентов системы (БД, внешние сервисы, приложение). Это позволило в режиме реального времени отслеживать метрики производительности и оперативно реагировать на инциденты, сократив время их устранения',
+            'Активно участвовал во всех этапах жизненного цикла продукта в рамках Scrum-процесса',
+            'Курировал и консультировал новых членов команды по код-стейджам, архитектурным решениям и бизнес-логике проекта, способствуя их быстрой адаптации и эффективной интеграции в рабочий процесс'
           ],
-          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis']
+          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
+        },
+        {
+          company: '',
+          position: 'Junior.NET Software Developer',
+          period: '2023 - 2024',
+          achievements: [
+            'Для надежного асинхронного взаимодействия между сервисами и legacy-монолитом использовали брокер сообщений RabbitMQ',
+            'Настраивал централизованное логирование через Seq и ELK-стек и мониторинг ключевых метрик здоровья системы (очереди в RabbitMQ, задержки ответа БД) в Grafana',
+            'Рефакторинг legacy-кода',
+            'Активно работал в рамках гибридной методологии (Scrum/Kanban), участвовал в планировании задач по модернизации, оценке рисков и ретроспективах'
+
+          ],
+          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker']
         },
         {
           company: 'Polessky State University',
-          position: '.NET Software Developer',
+          position: 'Junior.NET Software Developer',
           period: '2023 - 2024',
           achievements: [
             'Р азработал модульную платформу для внутренних коммуникаций и управления операциями на .NET с интеграцией мессенджер решений. Внедрил микросервисную архитектуру для разделения функционала оповещений, управления данными и аналитики',
@@ -183,6 +202,7 @@ export class LanguageService {
           ],
           technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core']
         }
+       
       ]
       ,
       // Contact widget
@@ -205,7 +225,7 @@ export class LanguageService {
       
       // Intro
       name: 'Anton Samoshuk',
-      position: '.NET Software Developer',
+      position: 'Middle .NET Software Developer',
       age: 'years old',
       experience_years: '+ years of experience',
       location: 'Brest, Belarus',
@@ -216,9 +236,13 @@ export class LanguageService {
       
       // About
       about_me: 'About Me',
-      about_text: `<strong>.NET Software Developer</strong> with <strong>2 years</strong> of experience in API development, as well as frontend and backend support. I create solutions that optimize processes, increase system stability and improve user experience.
+      about_text: `<strong>Middle .NET Software Developer</strong> with <strong>2 years</strong> of experience in full-cycle development, focused on delivering business-oriented solutions.
 
-I confidently work with modern API development technologies, as well as monitoring tools, OpenTelemetry and Grafana. I strive to create scalable and reliable solutions for business.`,
+My primary expertise lies in building not just functional but efficient and reliable systems that directly impact key business metrics. I achieve this by optimizing internal processes, enhancing system stability, and ultimately improving the end-user experience.
+
+I possess a deep interest in modern API development practices and actively utilize monitoring and observability tools (OpenTelemetry, Grafana) to collect metrics, analyze performance, and proactively identify issues. This data-driven approach allows me to build predictable and fault-tolerant systems.
+
+A strong advocate for teamwork and open communication, I thrive in environments where I can tackle complex challenges and contribute to building scalable, technologically advanced products. I am a continuous learner and always eager to embrace new challenges.`,
       my_values: 'My Values',
       
       // Experience
@@ -268,21 +292,35 @@ I confidently work with modern API development technologies, as well as monitori
           position: '.NET Software Developer',
           period: '2024 - Present',
           achievements: [
-            'Designed and implemented from scratch a comprehensive management system for critical objects, providing a full data lifecycle. Developed more than 25 API endpoints supporting complex business logic, integration with third-party services and data export',
-            'Developed a background service with batch file processing, implemented transaction processing with rollback on errors, created a table for outbox to track the migration status of each file and a retry mechanism',
-            'Implemented complex validation and CQRS patterns, increasing system reliability and fault tolerance',
-            'Optimized database operations and implemented caching, allowing the system to handle large volumes of data under high load',
-            'Created a centralized health monitoring system for all key components of the system (database, external services, application). This allowed real-time monitoring of performance metrics and proactive response to incidents, reducing resolution time',
+            'Designed and implemented a complex mission-critical control system from the ground up, establishing a complete and secure data lifecycle management process',
+            'Engineered a robust background service for high-volume batch file processing, implementing transactional logic with a comprehensive rollback mechanism to guarantee data integrity and consistency',
+            'Optimized complex SQL queries and database structures, resulting in a significant reduction in query execution time and improved overall application responsiveness',
+            'Integrated advanced caching strategies using Redis, which dramatically decreased response times and reduced the load on the primary database system',
+            'Architected a centralized health monitoring system for all key components (database, application, external services). This enabled real-time performance metric tracking and proactive incident response, drastically reducing mean time to resolution',
+            'Actively contributed to all phases of the product lifecycle within a Scrum framework',
+            'Mentored and onboarded new team members, providing guidance on code standards, architectural patterns, and business logic to facilitate rapid integration and productivity',
           ],
           technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis']
+        },
+        {
+          company: '',
+          position: 'Junior.NET Software Developer',
+          period: '2023 - 2024',
+          achievements: [
+            'Orchestrated reliable, asynchronous communication between new services and the legacy monolith by implementing a RabbitMQ message broker, ensuring decoupled and resilient service interaction',
+            'Established a comprehensive observability stack by configuring centralized logging (Seq, ELK stack) and Grafana dashboards to monitor key health metrics, including RabbitMQ queue states and database latency, enabling data-driven performance optimization',
+            'Legacy code refactoring',
+            'Actively collaborated within a hybrid Scrum/Kanban framework, contributing to modernization planning, risk assessment, and iterative process improvement through sprint retrospectives'
+          ],
+          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker']
         },
         {
           company: 'Polessky State University',
           position: '.NET Software Developer',
           period: '2023 - 2024',
           achievements: [
-            'eveloped a modular platform for internal communications and operations management on .NET with integration of messenger solutions. Implemented a microservice architecture to separate the functionality of notifications, data management and analytics',
-            'Implemented bots for automatic sending of operational notifications, reports and official messages to employees',
+            'Designed and developed a modular internal communications and operations management platform on .NET, integrating with third-party messenger solutions.Introduced a microservices architecture to decouple core functionalities such as notifications, data management, and analytics into independent, scalable services',
+            'Engineered and deployed automated bots for distributing real-time alerts, generating and sending reports, and delivering personalized reminders to employees, significantly improving operational efficiency',
           ],
           technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core']
         }
