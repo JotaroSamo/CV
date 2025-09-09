@@ -300,7 +300,7 @@ A strong advocate for teamwork and open communication, I thrive in environments 
             'Actively contributed to all phases of the product lifecycle within a Scrum framework',
             'Mentored and onboarded new team members, providing guidance on code standards, architectural patterns, and business logic to facilitate rapid integration and productivity',
           ],
-          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis']
+          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
         },
         {
           company: '',
@@ -312,7 +312,7 @@ A strong advocate for teamwork and open communication, I thrive in environments 
             'Legacy code refactoring',
             'Actively collaborated within a hybrid Scrum/Kanban framework, contributing to modernization planning, risk assessment, and iterative process improvement through sprint retrospectives'
           ],
-          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker']
+          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker', 'Jira']
         },
         {
           company: 'Polessky State University',
