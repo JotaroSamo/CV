@@ -182,10 +182,10 @@ export class LanguageService {
         {
           company: '',
           position: 'Junior.NET Software Developer',
-          period: '2023 - 2024',
+          period: '2024 - 2024',
           achievements: [
             'Для надежного асинхронного взаимодействия между сервисами и legacy-монолитом использовали брокер сообщений RabbitMQ',
-            'Настраивал централизованное логирование через Seq и ELK-стек и мониторинг ключевых метрик здоровья системы (очереди в RabbitMQ, задержки ответа БД) в Grafana',
+            'Настраивал централизованное логирование через Serilog и ELK-стек и мониторинг ключевых метрик здоровья системы (очереди в RabbitMQ, задержки ответа БД) в Grafana',
             'Рефакторинг legacy-кода',
             'Активно работал в рамках гибридной методологии (Scrum/Kanban), участвовал в планировании задач по модернизации, оценке рисков и ретроспективах'
 
@@ -305,10 +305,10 @@ A strong advocate for teamwork and open communication, I thrive in environments 
         {
           company: '',
           position: 'Junior.NET Software Developer',
-          period: '2023 - 2024',
+          period: '2024 - 2024',
           achievements: [
             'Orchestrated reliable, asynchronous communication between new services and the legacy monolith by implementing a RabbitMQ message broker, ensuring decoupled and resilient service interaction',
-            'Established a comprehensive observability stack by configuring centralized logging (Seq, ELK stack) and Grafana dashboards to monitor key health metrics, including RabbitMQ queue states and database latency, enabling data-driven performance optimization',
+            'Established a comprehensive observability stack by configuring centralized logging (Serilog, ELK stack) and Grafana dashboards to monitor key health metrics, including RabbitMQ queue states and database latency, enabling data-driven performance optimization',
             'Legacy code refactoring',
             'Actively collaborated within a hybrid Scrum/Kanban framework, contributing to modernization planning, risk assessment, and iterative process improvement through sprint retrospectives'
           ],
