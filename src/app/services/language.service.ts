@@ -104,7 +104,7 @@ export class LanguageService {
       // Intro
       name: 'Антон Самошук',
       position: 'Middle .NET Software Developer',
-      age: 'лет',
+      age: 'года',
       experience_years: '+ лет опыта',
       location: 'Брест, Беларусь',
       phone: '+375 (29) 558-06-32',
@@ -165,32 +165,20 @@ export class LanguageService {
       // Experience - items
       experience_items: [
         {
-          company: 'NDA',
+          company: 'Военная академия Республики Беларусь',
           position: 'Middle .NET Software Developer',
           period: '2024 - Настоящее время',
           achievements: [
             'Спроектировал и реализовал с нуля комплексную систему управления для критически важных объектов, обеспечившую полный жизненный цикл данных',
             'Разработал фоновый сервис с пакетной обработкой файлов, реализовал транзакционную обработку с откатом при ошибках',
-            'Оптимизировал большие запросы в базу данных, что улучшило время запроса',
+            'Оптимизировал долгие запросы в базу данных, что улучшило время запроса',
+            'Разрабатывал пользовательский интерфейс: создавал и интегрировал новые компоненты, сервисы, модули на Angular. Реализовывал клиентскую бизнес-логику и взаимодействие с backend API (REST) через HTTP-запросы. Участвовал в поддержке и рефакторинге существующего кода для улучшения производительности и читаемости',
             'Интегрировали стратегии кэширования с Redis для ускорения времени отклика и снижения нагрузки на базу данных',
             'Создал централизованную систему мониторинга здоровья всех ключевых компонентов системы (БД, внешние сервисы, приложение). Это позволило в режиме реального времени отслеживать метрики производительности и оперативно реагировать на инциденты, сократив время их устранения',
             'Активно участвовал во всех этапах жизненного цикла продукта в рамках Scrum-процесса',
             'Курировал и консультировал новых членов команды по код-стейджам, архитектурным решениям и бизнес-логике проекта, способствуя их быстрой адаптации и эффективной интеграции в рабочий процесс'
           ],
-          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
-        },
-        {
-          company: '',
-          position: 'Junior.NET Software Developer',
-          period: '2024 - 2024',
-          achievements: [
-            'Для надежного асинхронного взаимодействия между сервисами и legacy-монолитом использовали брокер сообщений RabbitMQ',
-            'Настраивал централизованное логирование через Serilog и ELK-стек и мониторинг ключевых метрик здоровья системы (очереди в RabbitMQ, задержки ответа БД) в Grafana',
-            'Рефакторинг legacy-кода',
-            'Активно работал в рамках гибридной методологии (Scrum/Kanban), участвовал в планировании задач по модернизации, оценке рисков и ретроспективах'
-
-          ],
-          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker']
+          technologies: ['C#', 'ASP.NET Core', 'Angular','Dapper','TS','RabbitMQ', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
         },
         {
           company: 'Polessky State University',
@@ -288,7 +276,7 @@ A strong advocate for teamwork and open communication, I thrive in environments 
       // Experience - items
       experience_items: [
         {
-          company: 'NDA',
+          company: 'Military Academy of the Republic of Belarus',
           position: '.NET Software Developer',
           period: '2024 - Present',
           achievements: [
@@ -296,23 +284,12 @@ A strong advocate for teamwork and open communication, I thrive in environments 
             'Engineered a robust background service for high-volume batch file processing, implementing transactional logic with a comprehensive rollback mechanism to guarantee data integrity and consistency',
             'Optimized complex SQL queries and database structures, resulting in a significant reduction in query execution time and improved overall application responsiveness',
             'Integrated advanced caching strategies using Redis, which dramatically decreased response times and reduced the load on the primary database system',
+            'Developed the user interface: created and integrated new components, services, modules on Angular. Implemented client business logic and interaction with the backend API (REST) ​​via HTTP requests. Participated in the support and refactoring of existing code to improve performance and readability',
             'Architected a centralized health monitoring system for all key components (database, application, external services). This enabled real-time performance metric tracking and proactive incident response, drastically reducing mean time to resolution',
             'Actively contributed to all phases of the product lifecycle within a Scrum framework',
             'Mentored and onboarded new team members, providing guidance on code standards, architectural patterns, and business logic to facilitate rapid integration and productivity',
           ],
-          technologies: ['C#', 'ASP.NET Core', 'DDD', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
-        },
-        {
-          company: '',
-          position: 'Junior.NET Software Developer',
-          period: '2024 - 2024',
-          achievements: [
-            'Orchestrated reliable, asynchronous communication between new services and the legacy monolith by implementing a RabbitMQ message broker, ensuring decoupled and resilient service interaction',
-            'Established a comprehensive observability stack by configuring centralized logging (Serilog, ELK stack) and Grafana dashboards to monitor key health metrics, including RabbitMQ queue states and database latency, enabling data-driven performance optimization',
-            'Legacy code refactoring',
-            'Actively collaborated within a hybrid Scrum/Kanban framework, contributing to modernization planning, risk assessment, and iterative process improvement through sprint retrospectives'
-          ],
-          technologies: ['C#', 'ASP.NET Core', 'MS SQL', 'EF Core', 'RabbitMQ','ELK', 'Docker', 'Jira']
+          technologies: ['C#', 'ASP.NET Core', 'Angular','Dapper','TS','RabbitMQ', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
         },
         {
           company: 'Polessky State University',
