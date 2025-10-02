@@ -103,7 +103,7 @@ export class LanguageService {
       
       // Intro
       name: 'Антон Самошук',
-      position: 'Middle .NET Software Developer',
+      position: '.NET Software Developer',
       age: 'года',
       experience_years: '+ лет опыта',
       location: 'Брест, Беларусь',
