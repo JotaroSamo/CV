@@ -33,7 +33,7 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
   protected readonly cvPath = computed(() => this.t().file_cv);
   
   protected readonly skills = signal([
-    'C#', 'ASP.NET Core', 'EF Core', 'Angular', 'TS', 'Dapper', 'PostgeSQL', 'MS SQL', 'Docker', 'Git', 'RabbitMQ', 'Redis', 'Grafana', 'Async Programming', 'MinIO', 'Jira'
+    'C#', 'ASP.NET Core', 'EF Core', 'Angular', 'TS', 'Dapper', 'PostgeSQL', 'Docker', 'Git', 'RabbitMQ', 'Redis', 'Grafana', "GraphQL", "SignalR" ,'MinIO', 'Jira'
   ]);
   
   protected readonly socialLinks = signal([
