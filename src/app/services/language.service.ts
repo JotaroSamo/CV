@@ -114,13 +114,7 @@ export class LanguageService {
       
       // About
       about_me: 'Обо мне',
-      about_text: `<strong>Middle .NET Software Developer</strong> с <strong>2-летним</strong> опытом полного цикла разработки, сфокусированный решении любых бизнес задач.
-
-Моя ключевая задача — создание не просто работающих, а эффективных и надежных решений, которые напрямую влияют на бизнес-показатели: оптимизируют внутренние процессы, повышают стабильность систем и в конечном итоге улучшают пользовательский опыт.
-
-Глубоко заинтересован в современных практиках API-разработки. Активно применяю инструменты мониторинга и (OpenTelemetry, Grafana) для сбора метрик, анализа производительности и проактивного выявления проблем, что позволяет строить предсказуемые и отказоустойчивые системы.
-
-Ценю командную работу и открытую коммуникацию. Стремлюсь к проектам, где могу принести максимальную пользу, решая сложные задачи и участвуя в создании масштабируемых и технологически совершенных продуктов. Постоянно учусь и с интересом принимаю новые вызовы.`,
+      about_text: `<strong>.NET Software Developer</strong> с <strong>2 годами</strong> опыта в проектировании и разработке высоконагруженных систем. Специализация на создании отказоустойчивых и производительных бэкенд-решений на C# и ASP.NET Core. Ключевые компетенции: оптимизация производительности, внедрение кэширования и систем мониторинга для повышения стабильности приложений.`,
       my_values: 'Мои ценности',
       
       // Experience
@@ -134,7 +128,7 @@ export class LanguageService {
       
       // Common
       years: 'лет',
-      years_experience: '+ лет опыта',
+      years_experience: 'лет опыта',
       gpa: 'GPA:',
 
       // About - highlights and values
@@ -154,7 +148,7 @@ export class LanguageService {
       // Education - items
       education_items: [
         {
-          institution: 'Polessky State University',
+          institution: 'Полесский государственный университет',
           degree: 'Степень бакалавра в области разработки программного обеспечения',
           period: '2020 - 2024',
           description: 'Изучение основ программирования, алгоритмов и структур данных, веб-разработки и баз данных.',
@@ -166,29 +160,29 @@ export class LanguageService {
       experience_items: [
         {
           company: 'Военная академия Республики Беларусь',
-          position: 'Middle .NET Software Developer',
-          period: '2024 - Настоящее время',
+          position: '.NET Software Developer',
+          period: 'Ноябрь2024 - Настоящее время',
           achievements: [
-            'Спроектировал и реализовал с нуля комплексную систему управления для критически важных объектов, обеспечившую полный жизненный цикл данных',
-            'Разработал фоновый сервис с пакетной обработкой файлов, реализовал транзакционную обработку с откатом при ошибках',
-            'Оптимизировал долгие запросы в базу данных, что улучшило время запроса',
-            'Разрабатывал пользовательский интерфейс: создавал и интегрировал новые компоненты, сервисы, модули на Angular. Реализовывал клиентскую бизнес-логику и взаимодействие с backend API (REST) через HTTP-запросы. Участвовал в поддержке и рефакторинге существующего кода для улучшения производительности и читаемости',
-            'Интегрировали стратегии кэширования с Redis для ускорения времени отклика и снижения нагрузки на базу данных',
-            'Создал централизованную систему мониторинга здоровья всех ключевых компонентов системы (БД, внешние сервисы, приложение). Это позволило в режиме реального времени отслеживать метрики производительности и оперативно реагировать на инциденты, сократив время их устранения',
-            'Активно участвовал во всех этапах жизненного цикла продукта в рамках Scrum-процесса',
-            'Курировал и консультировал новых членов команды по код-стейджам, архитектурным решениям и бизнес-логике проекта, способствуя их быстрой адаптации и эффективной интеграции в рабочий процесс'
+            'Участвовал в разработке и оптимизировал backend-модули для системы управления на основе микросервисной архитектуры.',
+            'птимизировал производительность ключевого API отчетов: провел анализ и рефакторинг SQL-запросов, внедрил Dapper и добавил недостающие индексы в PostgreSQL. Результат: снижение времени отклика с 2000 мс до 200 мс.',
+            'Внедрил кеширование данных в Redis для часто запрашиваемых эндпоинтов. Результат: снижение нагрузки на базу данных и повышение производительности на 40%',
+            'Разработал отказоустойчивый фоновый сервис для пакетной обработки файлов с полной транзакционной логикой и откатом изменений при ошибках.',
+            'Разрабатывал пользовательский интерфейс: создавал и интегрировал новые компоненты, сервисы, модули на Angular.',
+            'Настроил систему мониторинга на основе Grafana для отслеживания метрик здоровья приложения. Результат: время обнаружения инцидентов сократилось с 30 минут до 2-3 минут.',
+            'Участвовал в код-ревью и помогал в адаптации двух новых junior-разработчиков в команде.'
           ],
           technologies: ['C#', 'ASP.NET Core', 'Angular','Dapper','TS','RabbitMQ', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
         },
         {
-          company: 'Polessky State University',
-          position: 'Junior.NET Software Developer',
-          period: '2023 - 2024',
+          company: 'Полесский государственный университет',
+          position: '.NET Software Developer',
+          period: 'Июнь 2023 - Май 2024',
           achievements: [
-            'Разработал модульную платформу для внутренних коммуникаций и управления операциями на .NET с интеграцией мессенджер решений. Внедрил микросервисную архитектуру для разделения функционала оповещений, управления данными и аналитики',
-            'Реализовал ботов для автоматической рассылки оперативных оповещений, отчетов и персональных напоминаний сотрудникам',
+            'Участвовал в разработке микросервисной платформы для внутренних коммуникаций.',
+            'Реализовал бизнес-логику сервисов и REST API.',
+            'Разработал и внедрил ботов для автоматизации рассылки отчетов и уведомлений с использованием RabbitMQ. Результат: сокращение времени на рутинные операции на 25%.'
           ],
-          technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core']
+          technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core', 'RabbitMQ']
         }
        
       ]
@@ -224,13 +218,7 @@ export class LanguageService {
       
       // About
       about_me: 'About Me',
-      about_text: `<strong>Middle .NET Software Developer</strong> with <strong>2 years</strong> of experience in full-cycle development, focused on delivering business-oriented solutions.
-
-My primary expertise lies in building not just functional but efficient and reliable systems that directly impact key business metrics. I achieve this by optimizing internal processes, enhancing system stability, and ultimately improving the end-user experience.
-
-I possess a deep interest in modern API development practices and actively utilize monitoring and observability tools (OpenTelemetry, Grafana) to collect metrics, analyze performance, and proactively identify issues. This data-driven approach allows me to build predictable and fault-tolerant systems.
-
-A strong advocate for teamwork and open communication, I thrive in environments where I can tackle complex challenges and contribute to building scalable, technologically advanced products. I am a continuous learner and always eager to embrace new challenges.`,
+      about_text: `<strong>Middle .NET Software Developer</strong> with <strong>2 years</strong> of experience in designing and developing high-load systems. Specialized in building fault-tolerant and high-performance backend solutions using C# and ASP.NET Core. Key competencies include performance optimization, implementing caching and monitoring systems to enhance application stability.`,
       my_values: 'My Values',
       
       // Experience
@@ -278,16 +266,15 @@ A strong advocate for teamwork and open communication, I thrive in environments 
         {
           company: 'Military Academy of the Republic of Belarus',
           position: '.NET Software Developer',
-          period: '2024 - Present',
+          period: 'November 2024 - Present',
           achievements: [
-            'Designed and implemented a complex mission-critical control system from the ground up, establishing a complete and secure data lifecycle management process',
-            'Engineered a robust background service for high-volume batch file processing, implementing transactional logic with a comprehensive rollback mechanism to guarantee data integrity and consistency',
-            'Optimized complex SQL queries and database structures, resulting in a significant reduction in query execution time and improved overall application responsiveness',
-            'Integrated advanced caching strategies using Redis, which dramatically decreased response times and reduced the load on the primary database system',
-            'Developed the user interface: created and integrated new components, services, modules on Angular. Implemented client business logic and interaction with the backend API (REST) ​​via HTTP requests. Participated in the support and refactoring of existing code to improve performance and readability',
-            'Architected a centralized health monitoring system for all key components (database, application, external services). This enabled real-time performance metric tracking and proactive incident response, drastically reducing mean time to resolution',
-            'Actively contributed to all phases of the product lifecycle within a Scrum framework',
-            'Mentored and onboarded new team members, providing guidance on code standards, architectural patterns, and business logic to facilitate rapid integration and productivity',
+            'Participated in the development and optimization of backend modules for the management system based on a microservices architecture.',
+            'Optimized the performance of the key reporting API: conducted an analysis and refactoring of SQL queries, implemented Dapper, and added missing indexes to PostgreSQL. Result: reduction of response time from 2000 ms to 200 ms',
+            'Implemented data caching in Redis for frequently requested endpoints. Result: reduction of load on the database and increase of performance by 40%',
+            'Developed a fault-tolerant background service for batch file processing with full transactional logic and rollback on errors.',
+            'Developed the user interface: created and integrated new components, services, modules on Angular.',
+            'Configured the health monitoring system based on Grafana for monitoring the health of all application components. Result: the time to detect incidents was reduced from 30 minutes to 2-3 minutes.',
+            'Participated in code reviews and helped in the adaptation of two new junior developers in the team.',
           ],
           technologies: ['C#', 'ASP.NET Core', 'Angular','Dapper','TS','RabbitMQ', 'PostgreSQL', 'SQL/Dapper', 'EF Core', 'Minio', 'Redis', 'Jira', 'Docker']
         },
@@ -296,10 +283,11 @@ A strong advocate for teamwork and open communication, I thrive in environments 
           position: '.NET Software Developer',
           period: '2023 - 2024',
           achievements: [
-            'Designed and developed a modular internal communications and operations management platform on .NET, integrating with third-party messenger solutions.Introduced a microservices architecture to decouple core functionalities such as notifications, data management, and analytics into independent, scalable services',
-            'Engineered and deployed automated bots for distributing real-time alerts, generating and sending reports, and delivering personalized reminders to employees, significantly improving operational efficiency',
+            'Participated in the development of a microservices platform for internal communications.',
+            'Implemented business logic for services and REST APIs.',
+            'Developed and integrated bots for automating report distribution and notifications using RabbitMQ. Result: Reduced time spent on routine operations by 25%.'
           ],
-          technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core']
+          technologies: ['C#', 'ASP.NET Core', 'PostgreSQL', 'EF Core', 'RabbitMQ']
         }
       ]
       ,
